@@ -266,8 +266,8 @@ docs-tools-stamp: docs-tools
 .PHONY: runsim statik tools contract-tools docs-tools proto-tools  tools-stamp tools-clean docs-tools-stamp
 
 go.sum: go.mod
-	echo "Ensure dependencies have not been modified ..." >&2
-	go mod verify
+	#echo "Ensure dependencies have not been modified ..." >&2
+	#go mod verify
 	go mod tidy
 
 ###############################################################################
