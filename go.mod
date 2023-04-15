@@ -29,6 +29,7 @@ require (
 )
 
 require (
+	cosmossdk.io/errors v1.0.0-beta.7
 	github.com/cosmos/ibc-go/v3 v3.2.0
 	github.com/evmos/ethermint v0.19.3
 )
@@ -166,6 +167,7 @@ require (
 
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.7-0.20210622111912-ef00f8ac3d76
+	github.com/evmos/ethermint v0.19.3 => github.com/CRossel87a/ethermint v0.0.0-20230415122836-82ec37cf5baf
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/tendermint/tendermint v0.34.21 => github.com/CRossel87a/tendermint v0.34.22-0.20230215175341-657cb3bbe1b8
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
