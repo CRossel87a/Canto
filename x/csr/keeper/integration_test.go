@@ -8,8 +8,8 @@ import (
 
 	. "github.com/onsi/ginkgo/v2"
 
-	"github.com/Canto-Network/Canto/v2/contracts"
-	"github.com/Canto-Network/Canto/v2/testutil"
+	"github.com/Canto-Network/Canto/v6/contracts"
+	"github.com/Canto-Network/Canto/v6/testutil"
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/evmos/ethermint/crypto/ethsecp256k1"
@@ -112,6 +112,7 @@ var _ = Describe("CSR Distribution : ", Ordered, func() {
 			s.Require().False(found)
 		})
 		It("it should register a smart contract (non-factory deployed)", func() {
+
 			// Deploys the contract directly to the EVM state (does not hit the postTxProcessing hooks)
 			contractAddress, err := s.app.CSRKeeper.DeployContract(s.ctx, csrSmartContract, &turnstileAddress)
 			s.Require().NoError(err)
