@@ -174,4 +174,4 @@ replace (
 
 replace github.com/confio/ics23/go => github.com/cosmos/cosmos-sdk/ics23/go v0.8.0
 
-replace github.com/evmos/ethermint => github.com/CRossel87a/ethermint v0.0.0-20230509124652-f09d6bbf008d
+replace github.com/evmos/ethermint => github.com/CRossel87a/ethermint cantov2
