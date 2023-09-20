@@ -38,9 +38,9 @@ import (
 	servercfg "github.com/evmos/ethermint/server/config"
 	srvflags "github.com/evmos/ethermint/server/flags"
 
-	"github.com/Canto-Network/Canto/v6/app"
-	cmdcfg "github.com/Canto-Network/Canto/v6/cmd/config"
-	cantokr "github.com/Canto-Network/Canto/v6/crypto/keyring"
+	"github.com/Canto-Network/Canto/v7/app"
+	cmdcfg "github.com/Canto-Network/Canto/v7/cmd/config"
+	cantokr "github.com/Canto-Network/Canto/v7/crypto/keyring"
 )
 
 const (
@@ -242,6 +242,7 @@ func (a appCreator) newApp(logger log.Logger, db dbm.DB, traceStore io.Writer, a
 		logger, db, traceStore, true, skipUpgradeHeights,
 		cast.ToString(appOpts.Get(flags.FlagHome)),
 		cast.ToUint(appOpts.Get(sdkserver.FlagInvCheckPeriod)),
+		false,
 		a.encCfg,
 		appOpts,
 		baseapp.SetPruning(pruningOpts),
@@ -273,13 +274,13 @@ func (a appCreator) appExport(
 	}
 
 	if height != -1 {
-		cantoApp = app.NewCanto(logger, db, traceStore, false, map[int64]bool{}, "", uint(1), a.encCfg, appOpts)
+		cantoApp = app.NewCanto(logger, db, traceStore, false, map[int64]bool{}, "", uint(1), false, a.encCfg, appOpts)
 
 		if err := cantoApp.LoadHeight(height); err != nil {
 			return servertypes.ExportedApp{}, err
 		}
 	} else {
-		cantoApp = app.NewCanto(logger, db, traceStore, true, map[int64]bool{}, "", uint(1), a.encCfg, appOpts)
+		cantoApp = app.NewCanto(logger, db, traceStore, true, map[int64]bool{}, "", uint(1), false, a.encCfg, appOpts)
 	}
 
 	return cantoApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs)
