@@ -173,9 +173,9 @@ require (
 
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.7-0.20210622111912-ef00f8ac3d76
-	github.com/evmos/ethermint => github.com/Canto-Network/ethermint v0.19.3-hotfix
+	github.com/evmos/ethermint => github.com/crypto-org-chain/ethermint v0.20.11-cronos.0.20231114081059-0cd23d4cd4d6
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
-	github.com/tendermint/tendermint => github.com/informalsystems/tendermint v0.34.25
+	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.30-0.20230622094628-60e431e4eef0
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
 )
 
